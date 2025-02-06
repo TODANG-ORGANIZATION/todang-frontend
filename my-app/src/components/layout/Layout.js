@@ -8,33 +8,45 @@ function Layout() {
   
   // 현재 경로에 따라 Header props 설정
   const getHeaderProps = () => {
+    // review 페이지의 경우 orderId가 포함된 실제 경로와 매칭
+    if (location.pathname.startsWith('/review/')) {
+      return {
+        title: "리뷰 쓰기",
+        showBackButton: true,
+        showCartButton: false
+      };
+    }
+
     switch(location.pathname) {
       case '/cart':
         return {
           title: "장바구니",
-          showSearch: false,
           showBackButton: true,
           showCartButton: false
         };
       case '/payment':
         return {
           title: "결제하기",
-          showSearch: false,
           showBackButton: true,
           showCartButton: false
+        };
+      case '/signup':
+        return {
+          title: "회원가입",
+          showBackButton: true,
+          showCartButton: false
+        };
+      case '/orders':
+        return {
+          title: "주문내역",
+          showBackButton: false,
+          showCartButton: true
         };
       case '/liked':
         return {
           title: "찜",
-          showSearch: false,
           showBackButton: false,
           showCartButton: true
-        };
-      case '/review/:orderId':
-        return {
-          title: "리뷰 쓰기",
-          showBackButton: false,
-          showCartButton: false
         };
       default:
         return {
@@ -52,7 +64,6 @@ function Layout() {
       <div className="flex-1 overflow-auto">
         <Outlet />
       </div>
-      <Footer />
     </div>
   );
 }
