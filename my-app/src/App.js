@@ -13,6 +13,10 @@ import LikedPage from './pages/LikedPage';
 import LoginSelectPage from './pages/LoginSelectPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import MyPage from './pages/MyPage';
+import MyPageEdit from './pages/MyPageEdit';
+import ReviewList from './pages/ReviewList'
+import AlertPage from './pages/AlertPage';
 
 function App() {
   return (
@@ -31,6 +35,10 @@ function App() {
             <Route path="order/:id" element={<OrderDetailPage />} />
             <Route path="review/write/:orderId" element={<ReviewWritePage />} />
             <Route path="liked" element={<LikedPage />} />
+            <Route path="mypage" element={<MyPage />} />
+            <Route path="mypage/edit" element={<MyPageEdit />} />
+            <Route path="reviews" element={<ReviewList />} />
+            <Route path="alert" element={<AlertPage />} />
           </Route>
         </Routes>
       </div>
