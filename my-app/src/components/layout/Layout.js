@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function Layout() {
   const location = useLocation();
@@ -52,7 +53,14 @@ function Layout() {
         };
       case '/reviews':
         return {
-          title: "내 리뷰",
+          title: "리뷰 관리",
+          showBackButton: true,
+          showCartButton: false,
+          showAlertButton: false
+        };
+      case '/reviews/:reviewId':
+        return {
+          title: "리뷰 상세",
           showBackButton: true,
           showCartButton: false,
           showAlertButton: false
@@ -81,6 +89,7 @@ function Layout() {
       <div className="flex-1 overflow-auto">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }

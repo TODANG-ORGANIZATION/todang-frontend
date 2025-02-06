@@ -41,7 +41,6 @@ function App() {
             <Route path="alert" element={<AlertPage />} />
             
             
-            
           </Route>
         </Routes>
       </div>
