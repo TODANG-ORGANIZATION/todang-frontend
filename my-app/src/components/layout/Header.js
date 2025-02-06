@@ -8,7 +8,7 @@ function Header({
   title, 
   showBackButton = false, 
   showCartButton = false, 
-  showAlertButton = false 
+  showAlertButton = false
 }) {
   const navigate = useNavigate();
   const isLoggedIn = !!localStorage.getItem("accessToken");
