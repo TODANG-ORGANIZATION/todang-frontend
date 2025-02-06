@@ -39,6 +39,8 @@ function App() {
             <Route path="mypage/edit" element={<MyPageEdit />} />
             <Route path="reviews" element={<ReviewList />} />
             <Route path="alert" element={<AlertPage />} />
+            
+            
           </Route>
         </Routes>
       </div>
