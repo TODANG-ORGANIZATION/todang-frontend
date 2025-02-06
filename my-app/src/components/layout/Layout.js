@@ -12,36 +12,73 @@ function Layout() {
       case '/cart':
         return {
           title: "장바구니",
-          showSearch: false,
           showBackButton: true,
-          showCartButton: false
+          showCartButton: false,
+          showAlertButton: false
         };
       case '/payment':
         return {
           title: "결제하기",
-          showSearch: false,
           showBackButton: true,
-          showCartButton: false
+          showCartButton: false,
+          showAlertButton: false
         };
       case '/liked':
         return {
           title: "찜",
-          showSearch: false,
           showBackButton: false,
-          showCartButton: true
+          showCartButton: true,
+          showAlertButton: false
         };
       case '/review/:orderId':
         return {
           title: "리뷰 쓰기",
           showBackButton: false,
-          showCartButton: false
+          showCartButton: false,
+          showAlertButton: false
         };
+      case '/mypage':
+        return {
+          title: "MY 투당",
+          showBackButton: false,
+          showCartButton: false,
+          showAlertButton: true
+        };
+      case '/mypage/edit':
+        return {
+          title: "정보 수정",
+          showBackButton: false,
+          showCartButton: false,
+          showAlertButton: false
+        };
+      case '/reviews':
+        return {
+          title: "리뷰 관리",
+          showBackButton: true,
+          showCartButton: false,
+          showAlertButton: false
+        };
+      case '/reviews/:reviewId':
+        return {
+          title: "리뷰 상세",
+          showBackButton: true,
+          showCartButton: false,
+          showAlertButton: false
+        };
+      case '/alert':
+        return {
+          title: "알림 센터",
+          showBackButton: true,
+          showCartButton: false,
+          showAlertButton: false
+        };
+
       default:
         return {
           title: "홈",
-          showSearch: true,
           showBackButton: false,
-          showCartButton: true
+          showCartButton: true,
+          showAlertButton: false
         };
     }
   };
